@@ -81,3 +81,24 @@ for m in range(1, 5):
             best_match_info = f"[{matches_played}] {hero_name}  (KDA: {kda:.2f})"
     
     print() # New line for spacing
+
+# Compute Win Rate
+win_rate = 0
+if matches_played > 0:
+    win_rate = int((wins / matches_played) * 100)
+
+# 8. Print Formatted Match Log
+print("=============================================")
+print(f"     {ign} -- MATCH LOG ({rank})")
+print("=============================================")
+
+for match in match_history:
+    # index 0: #, 1: Hero, 2: KDA, 3: Res, 4: Tag
+    print(f"[{match[0]}] {match[1]:<10} | KDA: {match[2]:.2f}  | {match[3]:<4} | {match[4]}")
+
+print("---------------------------------------------")
+print(f"Matches Played : {matches_played}")
+print(f"Wins : {wins}  |  Losses : {losses}")
+print(f"Win Rate       : {win_rate}%")
+print(f"Best Match     : {best_match_info}")
+print("=============================================")
